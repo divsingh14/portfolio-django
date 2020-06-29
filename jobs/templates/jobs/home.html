@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <main> 
+        <nav class="indigo darken-4">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Divyansh Singh</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="sass.html">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="badges.html">Resume</a>
+                        </li>
+                        <li>
+                            <a href="collapsible.html">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <h3>Jobs</h3>
+            <div class="row">
+                {% for job in jobs.all%}
+                    <div class="col s3 m3">
+                        <div class="card z-depth-5">
+                            <div class="card-image">
+                                <img src="{{ job.image.url }}">
+                            </div>
+                            <div class="card-content">
+                                <p>{{ job.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+
+        <footer class="page-footer indigo darken-4" style="position:fixed;bottom:0;left:0;width:100%;">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Copyright Text
+                </div>
+            </div>
+        </footer>      
+    </main>
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>
