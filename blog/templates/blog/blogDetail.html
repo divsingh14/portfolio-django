@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog Details</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
@@ -29,24 +29,9 @@
             </div>
         </nav>
         <div class="container">
-            <h3>Welcome to my Blog</h3>
-                {% if blogs.all.count %}
-                    <h4>Latest Posts</h4>
-                    <hr>
-                    {% for blog in blogs.all %}
-                        <div class="row">
-                            <a href="{% url 'blogDetails' blog.id %}"><h4>{{ blog.title }}</h4></a>
-                            {{ blog.pubDatePretty }}
-                            <br />
-                            <img src="{{ blog.image.url }}" height="200" width="350" />
-                            <br/>
-                            <p>{{ blog.summary }}<a href="{% url 'blogDetails' blog.id %}">Read More</a></p>
-                            <br/>
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    <h4>No Latest Posts</h4>
-                {% endif %}
+            <h3>{{blog.title}}</h3><small>{{ blog.pubDate }}</small>
+            <img src="{{ blog.image.url }}" alt="{{blog.title}}" style="width: 100%;">
+            <p>{{ blog.body }}</p>
         </div>
         <br><br>
         <footer class="page-footer indigo darken-4" style="position:fixed;bottom:0;left:0;width:100%;">
@@ -57,7 +42,7 @@
             </div>
         </footer>      
     </main>
-    
+    <br><br>
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

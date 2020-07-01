@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +16,10 @@
                     <a href="{% url 'home' %}" class="brand-logo">Divyansh Singh</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>
-                            <a href="sass.html">GitHub</a>
+                            <a href="https://github.com/divsingh14">GitHub</a>
                         </li>
                         <li>
-                            <a href="badges.html">Resume</a>
+                            <a href="{% static 'resume.pdf' %}">Resume</a>
                         </li>
                         <li>
                             <a href="{% url 'blogPage' %}">Blog</a>
